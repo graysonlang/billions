@@ -6,6 +6,7 @@
 #include <random>
 #include <string>
 
+
 namespace {
 
     std::string to_binary(std::uint32_t u, bool spacing = true) {
@@ -74,7 +75,6 @@ namespace {
         _ptr = (dword*)malloc(_num_bytes);
         if (_ptr == NULL) {
             throw std::runtime_error("Memory not allocated.\n");
-            exit(1);
         }
         memset(_ptr, 0, _num_bytes);
     };
@@ -134,7 +134,6 @@ namespace {
     }
 } // anonymous namespace
 
-
 int main(int argc, const char * argv[]) {
     size_t n = 10;
     if (argc > 1)
@@ -153,11 +152,8 @@ int main(int argc, const char * argv[]) {
     }
 
     s.print();
-
     return 0;
 }
-
-
 
 //     // for (size_t i = 0; i < 10; ++i) {
 //     //     std::uint8_t x = _memory[i];
