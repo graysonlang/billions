@@ -144,8 +144,7 @@ int main(int argc, const char * argv[]) {
         s.insert(generate_random_number());
     }
 
-    std::string path(getenv("HOME"));
-    std::ofstream file(path + "/Desktop/out", std::ios::out | std::ios::binary);
+    std::ofstream file("out", std::ios::out | std::ios::binary);
     if (file.is_open()) {
         file.write(reinterpret_cast<const char*>(s.segments), std::streamsize(sizeof(s.segments)));
         file.close();
